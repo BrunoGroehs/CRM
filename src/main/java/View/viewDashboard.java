@@ -4,17 +4,92 @@
  */
 package View;
 
+import Controller.ViewController;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Bruno Groehs
  */
-public class viewDashboard extends javax.swing.JFrame {
-
-    /**
-     * Creates new form viewDashboard
-     */
-    public viewDashboard() {
+public class ViewDashboard extends javax.swing.JFrame {
+    
+    private final ViewController controller;
+    
+    public ViewDashboard() {
         initComponents();
+        controller = new ViewController(this);
+    }
+    
+    public void exibeMensagem(String mensagem) {
+        JOptionPane.showMessageDialog(null, mensagem);
+    }
+
+    public JTextField getjTextCodigo() {
+        return jTextCodigo;
+    }
+
+    public void setjTextCodigo(JTextField jTextCodigo) {
+        this.jTextCodigo = jTextCodigo;
+    }
+
+    public JTextField getjTextIndicacao() {
+        return jTextIndicacao;
+    }
+
+    public void setjTextIndicacao(JTextField jTextIndicacao) {
+        this.jTextIndicacao = jTextIndicacao;
+    }
+    
+    
+    public JTable getjTableLista() {
+        return jTableLista;
+    }
+
+    public void setjTableLista(JTable jTableLista) {
+        this.jTableLista = jTableLista;
+    }
+
+    
+    public javax.swing.JTextField getjTextCidadeContato() {
+        return jTextCidadeContato;
+    }
+
+    public void setjTextCidadeContato(javax.swing.JTextField jTextCidadeContato) {
+        this.jTextCidadeContato = jTextCidadeContato;
+    }
+
+    public javax.swing.JTextField getjTextDataPrimeiroContato() {
+        return jTextDataPrimeiroContato;
+    }
+
+    public void setjTextDataPrimeiroContato(javax.swing.JTextField jTextDataPrimeiroContato) {
+        this.jTextDataPrimeiroContato = jTextDataPrimeiroContato;
+    }
+
+    public javax.swing.JTextField getjTextNomeContato() {
+        return jTextNomeContato;
+    }
+
+    public void setjTextNomeContato(javax.swing.JTextField jTextNomeContato) {
+        this.jTextNomeContato = jTextNomeContato;
+    }
+
+    public javax.swing.JTextArea getjTextObservacaoContato() {
+        return jTextObservacaoContato;
+    }
+
+    public void setjTextObservacaoContato(javax.swing.JTextArea jTextObservacaoContato) {
+        this.jTextObservacaoContato = jTextObservacaoContato;
+    }
+
+    public javax.swing.JTextField getjTextTelefoneContato() {
+        return jTextTelefoneContato;
+    }
+
+    public void setjTextTelefoneContato(javax.swing.JTextField jTextTelefoneContato) {
+        this.jTextTelefoneContato = jTextTelefoneContato;
     }
 
     /**
@@ -33,17 +108,49 @@ public class viewDashboard extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        contatos = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         atividades = new javax.swing.JPanel();
         oportunidades = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableLista = new javax.swing.JTable();
+        contatos = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextNomeContato = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextTelefoneContato = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextDataPrimeiroContato = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextCidadeContato = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextObservacaoContato = new javax.swing.JTextArea();
+        jButtomCriaCliente = new javax.swing.JButton();
+        jTextCodigo = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextIndicacao = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFont(new java.awt.Font("Montserrat Thin", 0, 14)); // NOI18N
         setSize(new java.awt.Dimension(1280, 720));
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 255));
+
+        jTabbedPane1.setBackground(new java.awt.Color(51, 153, 255));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        jTabbedPane1.setToolTipText("");
+        jTabbedPane1.setAutoscrolls(true);
+        jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTabbedPane1.setFocusCycleRoot(true);
+        jTabbedPane1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +191,7 @@ public class viewDashboard extends javax.swing.JFrame {
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         dashboardLayout.setVerticalGroup(
             dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,57 +204,213 @@ public class viewDashboard extends javax.swing.JFrame {
                 .addGroup(dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Dashboard", dashboard);
 
-        jLabel1.setText("Cadastro de usuario.");
+        javax.swing.GroupLayout atividadesLayout = new javax.swing.GroupLayout(atividades);
+        atividades.setLayout(atividadesLayout);
+        atividadesLayout.setHorizontalGroup(
+            atividadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 599, Short.MAX_VALUE)
+        );
+        atividadesLayout.setVerticalGroup(
+            atividadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 471, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Atividades", atividades);
+
+        jTableLista.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jTableLista.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nome", "Ultima Data", "Valor do Projeto", "Indicação"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableLista.setToolTipText("");
+        jTableLista.setShowGrid(false);
+        jTableLista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableListaMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jTableLista);
+
+        javax.swing.GroupLayout oportunidadesLayout = new javax.swing.GroupLayout(oportunidades);
+        oportunidades.setLayout(oportunidadesLayout);
+        oportunidadesLayout.setHorizontalGroup(
+            oportunidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(oportunidadesLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        oportunidadesLayout.setVerticalGroup(
+            oportunidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(oportunidadesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Oportunidades", oportunidades);
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel1.setText("Cadastro de Cliente");
+
+        jLabel2.setText("Nome");
+
+        jTextNomeContato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNomeContatoActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Telefone");
+
+        jTextTelefoneContato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextTelefoneContatoActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Data Primeiro Contato");
+
+        jTextDataPrimeiroContato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextDataPrimeiroContatoActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Observação");
+
+        jLabel6.setText("Cidade");
+
+        jTextCidadeContato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextCidadeContatoActionPerformed(evt);
+            }
+        });
+
+        jTextObservacaoContato.setColumns(20);
+        jTextObservacaoContato.setRows(5);
+        jScrollPane1.setViewportView(jTextObservacaoContato);
+
+        jButtomCriaCliente.setText("Cria Cliente");
+        jButtomCriaCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtomCriaClienteActionPerformed(evt);
+            }
+        });
+
+        jTextCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextCodigoActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Codigo");
+
+        jTextIndicacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIndicacaoActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Indicação");
 
         javax.swing.GroupLayout contatosLayout = new javax.swing.GroupLayout(contatos);
         contatos.setLayout(contatosLayout);
         contatosLayout.setHorizontalGroup(
             contatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contatosLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addGroup(contatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtomCriaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(contatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(contatosLayout.createSequentialGroup()
+                            .addGap(69, 69, 69)
+                            .addComponent(jLabel1))
+                        .addGroup(contatosLayout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addGroup(contatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(contatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jTextCodigo, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextDataPrimeiroContato, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextCidadeContato, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextTelefoneContato, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextNomeContato, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextIndicacao, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(jLabel7))
+                            .addGap(18, 18, 18)
+                            .addGroup(contatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
         contatosLayout.setVerticalGroup(
             contatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contatosLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel1)
-                .addContainerGap(305, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(contatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(contatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(contatosLayout.createSequentialGroup()
+                        .addComponent(jTextNomeContato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextTelefoneContato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextDataPrimeiroContato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextCidadeContato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextIndicacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1))
+                .addGap(18, 18, 18)
+                .addComponent(jButtomCriaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Contatos", contatos);
-
-        javax.swing.GroupLayout atividadesLayout = new javax.swing.GroupLayout(atividades);
-        atividades.setLayout(atividadesLayout);
-        atividadesLayout.setHorizontalGroup(
-            atividadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 315, Short.MAX_VALUE)
-        );
-        atividadesLayout.setVerticalGroup(
-            atividadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Atividades", atividades);
-
-        javax.swing.GroupLayout oportunidadesLayout = new javax.swing.GroupLayout(oportunidades);
-        oportunidades.setLayout(oportunidadesLayout);
-        oportunidadesLayout.setHorizontalGroup(
-            oportunidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 315, Short.MAX_VALUE)
-        );
-        oportunidadesLayout.setVerticalGroup(
-            oportunidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Oportunidades", oportunidades);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -190,6 +453,47 @@ public class viewDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void jTextNomeContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNomeContatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNomeContatoActionPerformed
+
+    private void jTextTelefoneContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextTelefoneContatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextTelefoneContatoActionPerformed
+
+    private void jTextDataPrimeiroContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDataPrimeiroContatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextDataPrimeiroContatoActionPerformed
+
+    private void jTextCidadeContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCidadeContatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextCidadeContatoActionPerformed
+
+    private void jButtomCriaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtomCriaClienteActionPerformed
+        controller.criaUsuario();
+    }//GEN-LAST:event_jButtomCriaClienteActionPerformed
+
+    private void jTextCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextCodigoActionPerformed
+
+    private void jTextIndicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIndicacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIndicacaoActionPerformed
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        controller.atualizaTabela();
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void jTableListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableListaMouseClicked
+        //click no cliente
+        
+        if (evt.getClickCount() == 2) {            
+            controller.clickCliente();
+        }
+        
+    }//GEN-LAST:event_jTableListaMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -207,20 +511,21 @@ public class viewDashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new viewDashboard().setVisible(true);
+                new ViewDashboard().setVisible(true);
             }
         });
     }
@@ -229,13 +534,31 @@ public class viewDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel atividades;
     private javax.swing.JPanel contatos;
     private javax.swing.JPanel dashboard;
+    private javax.swing.JButton jButtomCriaCliente;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTableLista;
+    private javax.swing.JTextField jTextCidadeContato;
+    private javax.swing.JTextField jTextCodigo;
+    private javax.swing.JTextField jTextDataPrimeiroContato;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextIndicacao;
+    private javax.swing.JTextField jTextNomeContato;
+    private javax.swing.JTextArea jTextObservacaoContato;
+    private javax.swing.JTextField jTextTelefoneContato;
     private javax.swing.JPanel oportunidades;
     // End of variables declaration//GEN-END:variables
 }
